@@ -1,0 +1,14 @@
+---
+- name: Installing aafire, cowsay, sl.
+  hosts: ezhov
+  remote_user: root
+  become: yes
+
+  tasks:
+  - name: install aafire
+    dnf: name=aalib state=installed update_cache=true
+  - name: install cowsay
+    dnf: name=cowsay state=installed update_cache=true
+  - name: install sl
+    dnf: name=sl state=installed update_cache=true
+
